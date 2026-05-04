@@ -394,8 +394,11 @@
 
   <!-- Supabase JS client (UMD build — exposes window.supabase) -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <!-- Your project credentials — copy config.example.js → config.js and fill in values -->
-  <script src="js/config.js" onerror="console.info('[HP Quiz] No config.js found — leaderboard uses localStorage.')"></script>
+  <!-- Supabase credentials (anon key is safe to expose — security comes from RLS policies) -->
+  <script>
+    const SUPABASE_URL  = 'https://ciqzehoicrigtjyujspe.supabase.co';
+    const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpcXplaG9pY3JpZ3RqeXVqc3BlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4NTM0MzksImV4cCI6MjA5MzQyOTQzOX0.QsDpf_lQXKeGc8w6cchjX5JkzrcQcE4KXS_uzYQpDec';
+  </script>
   <script src="js/questions.js"></script>
   <script src="js/quiz.js"></script>
   <script>

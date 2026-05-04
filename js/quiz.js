@@ -15,8 +15,8 @@ const QuizApp = (() => {
   function initSupabase() {
     try {
       if (
-        typeof SUPABASE_URL  = https://ciqzehoicrigtjyujspe.supabase.co/rest/v1/
-        typeof SUPABASE_ANON = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpcXplaG9pY3JpZ3RqeXVqc3BlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4NTM0MzksImV4cCI6MjA5MzQyOTQzOX0.QsDpf_lQXKeGc8w6cchjX5JkzrcQcE4KXS_uzYQpDec
+        typeof SUPABASE_URL  === 'string' &&
+        typeof SUPABASE_ANON === 'string' &&
         !SUPABASE_URL.includes('YOUR_PROJECT_ID') &&
         !SUPABASE_ANON.includes('YOUR_ANON_PUBLIC_KEY')
       ) {
