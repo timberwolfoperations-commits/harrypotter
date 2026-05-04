@@ -1,0 +1,13 @@
+# dependencies & build output
+node_modules/
+dist/
+.next/
+
+# Supabase credentials — NEVER commit this file
+js/config.js
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp

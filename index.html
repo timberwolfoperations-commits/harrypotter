@@ -392,6 +392,10 @@
 
   </div><!-- /container -->
 
+  <!-- Supabase JS client (UMD build — exposes window.supabase) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Your project credentials — copy config.example.js → config.js and fill in values -->
+  <script src="js/config.js" onerror="console.info('[HP Quiz] No config.js found — leaderboard uses localStorage.')"></script>
   <script src="js/questions.js"></script>
   <script src="js/quiz.js"></script>
   <script>
@@ -411,7 +415,6 @@
         `;
         sf.appendChild(s);
       }
-
       // Floating magical particles
       const emojis = ['⚡','🌟','✨','🪄','⭐','💫'];
       for (let i = 0; i < 15; i++) {
@@ -427,23 +430,6 @@
         sf.appendChild(p);
       }
     })();
-
-    // ── Animate score circle on results ──
-    const _origShowResults = QuizApp;
-    const observer = new MutationObserver(() => {
-      const resultsScreen = document.getElementById('resultsScreen');
-      if (!resultsScreen.classList.contains('hidden')) {
-        const pctText = document.getElementById('resultPercent').textContent;
-        const pct = parseInt(pctText) || 0;
-        const circle = document.getElementById('scoreCircle');
-        const circumference = 339.29;
-        const offset = circumference - (pct / 100) * circumference;
-        requestAnimationFrame(() => {
-          setTimeout(() => { circle.style.strokeDashoffset = offset; }, 100);
-        });
-      }
-    });
-    observer.observe(document.getElementById('resultsScreen'), { attributes: true });
   </script>
 </body>
 </html>
